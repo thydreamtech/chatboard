@@ -57,7 +57,7 @@ if (Meteor.isClient) {
   });
 
   Template.conversation.events({
-    'click button': function () {
+    'click .add': function () {
       // increment the counter when button is clicked
        Message.insert({
          from: Session.get('user'),
@@ -65,7 +65,11 @@ if (Meteor.isClient) {
        });
       $('#message').val('');
     },
-    'click #delete': function () {
+    'click .logout': function () {
+      Router.go('login');
+      Session.set('user',null);
+    },
+    'click .delete': function () {
       Message.remove(this._id)
     }
    });
