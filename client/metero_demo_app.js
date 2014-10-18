@@ -1,4 +1,4 @@
-Message = new Meteor.Collection('messages');
+Chat = new Meteor.Collection('chats');
 UserLog = new Meteor.Collection('login');
 if (Meteor.isClient) {
   // counter starts at 0
@@ -22,8 +22,8 @@ if (Meteor.isClient) {
         return Session.get('user')
       }
     },
-    addMessage:function () {
-      return Message.find({})
+    message:function () {
+      return Chat.find({})
     }
   });
 
@@ -59,9 +59,9 @@ if (Meteor.isClient) {
   Template.conversation.events({
     'click .add': function () {
       // increment the counter when button is clicked
-       Message.insert({
-         from: Session.get('user'),
-         message: $('#message').val()
+       Chat.insert({
+         user: Session.get('user'),
+         content: $('#message').val()
        });
       $('#message').val('');
     },
@@ -70,7 +70,7 @@ if (Meteor.isClient) {
       Session.set('user',null);
     },
     'click .delete': function () {
-      Message.remove(this._id)
+      Chat.remove(this._id)
     }
    });
 }

@@ -1,4 +1,4 @@
-SampleText = new Meteor.Collection('demo2');
+SampleText = new Meteor.Collection('chats');
 UserLog = new Meteor.Collection('login');
 if (Meteor.isServer) {
   Meteor.startup(function () {
