@@ -1,5 +1,5 @@
-<template name="conversation" class="conversation">
-  <div class="container-fluid">
+<template name="conversation" >
+  <div class="container">
     <div class="col-md-6 left-part">
       <h3> Information we have shared: </h3>
       <table class="table table-striped">
@@ -8,7 +8,7 @@
         <th>MESSAGE</th>
         </thead>
         <tbody>
-        {{#each addText}}
+        {{#each addMessage}}
         <tr>
           <td>{{from}}</td>
           <td>{{message}}</td>
