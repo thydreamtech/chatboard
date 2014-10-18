@@ -23,6 +23,11 @@ if (Meteor.isClient) {
     }
   });
 
+//  Template.conversation.rendered = function(){
+//     console.log("Test" + $(".draggable").size());
+//    $(".draggable").draggable();
+//  }
+//
   Template.newuser.events({
     'click #submit': function () {
       UserLog.insert({
