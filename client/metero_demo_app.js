@@ -1,4 +1,4 @@
-SampleText = new Meteor.Collection('demo2');
+Message = new Meteor.Collection('messages');
 UserLog = new Meteor.Collection('login');
 if (Meteor.isClient) {
   // counter starts at 0
@@ -16,13 +16,22 @@ if (Meteor.isClient) {
   Template.conversation.helpers({
 
     username: function () {
-      return Session.get('user')
+      if(Session.get('user') == null){
+        Router.go('login')
+      }else {
+        return Session.get('user')
+      }
     },
-    addText:function () {
-      return SampleText.find({})
+    addMessage:function () {
+      return Message.find({})
     }
   });
 
+//  Template.conversation.rendered = function(){
+//     console.log("Test" + $(".draggable").size());
+//    $(".draggable").draggable();
+//  }
+//
   Template.newuser.events({
     'click #submit': function () {
       UserLog.insert({
@@ -53,20 +62,21 @@ if (Meteor.isClient) {
   });
 
   Template.conversation.events({
-    'click button': function () {
+    'click .add': function () {
       // increment the counter when button is clicked
-       SampleText.insert({
+       Message.insert({
          from: Session.get('user'),
          message: $('#message').val()
        });
       $('#message').val('');
     },
-    'click #delete': function () {
-      SampleText.remove(this._id)
+    'click .logout': function () {
+      Router.go('login');
+      Session.set('user',null);
+    },
+    'click .delete': function () {
+      Message.remove(this._id)
     }
    });
-  Meteor.startup(function () {
-    console.log("user :"+Session.keys['user'])
-  });
 }
 
