@@ -1,0 +1,19 @@
+.form-control.large-input{
+    height: 34px;
+}
+.checkbox{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    min-height: 20px;
+    display: block;
+    position: relative;
+}
+.panel.panel-primary>.panel-heading{
+    background-color: #f8f8f8;
+}
+.panel.panel-primary{
+    border-color: #e7e7e7;
+}
+.panel-heading{
+    color: #149bdf;
+}

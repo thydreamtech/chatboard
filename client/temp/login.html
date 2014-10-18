@@ -1,16 +1,55 @@
 <template name="login">
-  <div style="text-align: center">
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon">User name :</span>
-      <input type="text" class="form-control user" placeholder="Username">
-    </div> <br/>
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon">Password : </span>
-      <input type="password" class="form-control password" placeholder="Password">
-    </div><br/>
-    <div>
-        <button id="sign-in">Sign In</button>
-        <button id="sign-up">Sign Up</button>
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please Sign In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control large-input" placeholder="E-mail" name="email"
+                                               type="email"
+                                               autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control large-input" placeholder="Password" name="password"
+                                               type="password"
+                                               value="">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                        </label>
+                                    </div>
+                                    <a href="" class="btn btn-lg btn-success btn-block" id="'sign-in">Login</a>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
+    <!--<input type="email" class="form-control user" placeholder="Username" autofocus="">-->
+    <!--</div>-->
+    <!--<br/>-->
+    <!---->
+    <!--<div class="input-group input-group-lg">-->
+    <!--<span class="input-group-addon">Password : </span>-->
+    <!--<input type="password" class="form-control password" placeholder="Password">-->
+    <!--</div>-->
+    <!--<br/>-->
+
+    <!--<div>-->
+    <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+    <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>-->
+    <!--<button type="button" id="sign-in" class="btn btn-primary btn-lg">Sign In</button>-->
+    <!--<button type="button" id="sign-up" class="btn btn-primary btn-lg">Sign Up</button>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
 </template>
