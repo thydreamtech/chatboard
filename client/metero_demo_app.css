@@ -1,0 +1,9 @@
+/* CSS declarations go here */
+.right-part {
+    width: 40%;
+    float: right;
+}
+.left-part {
+    width: 40%;
+    float: left;
+}
