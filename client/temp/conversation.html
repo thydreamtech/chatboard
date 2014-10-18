@@ -1,31 +1,33 @@
-<template name="conversation" >
-  <div class="container">
-    <div class="col-md-6 left-part">
-      <h3> Information we have shared: </h3>
-      <table class="table table-striped">
-        <thead>
-        <th>FROM</th>
-        <th>MESSAGE</th>
-        </thead>
-        <tbody>
-        {{#each message}}
-        <tr>
-          <td>{{user}}</td>
-          <td>{{content}}</td>
-          <td class="delete">x</td>
-        </tr>
-        {{/each}}
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-4 right-part">
-      <div class="panel panel-default">
-      User name :{{username}}<br/>
+<template name="conversation" class="conversation">
+    <div class="container-fluid">
+        <div class="col-md-6 left-part">
+            <h3> Information we have shared: </h3>
+            <table class="table table-striped">
+                <thead>
+                <th>FROM</th>
+                <th>MESSAGE</th>
+                </thead>
+                <tbody>
+                {{#each message}}
+                <div class="ui-widget-content draggable">
+                    <p>
+                        {{user}} {{content}} </p>
+                    <span class="delete">x</span>
+                </div>
 
-      MESSAGE :
-      <textarea id="message"></textarea><br/><br/>
-      <button class="add">Add</button><button class="logout">Log Out</button>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4 right-part">
+            <div class="panel panel-default">
+                User name :{{username}}<br/>
+
+                MESSAGE :
+                <textarea id="message"></textarea><br/><br/>
+                <button class="add">Add</button>
+                <button class="logout">Log Out</button>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </template>
