@@ -7,6 +7,45 @@
     width: 40%;
     float: left;
 }
-.conversation{
-    background-image: url(/img/blackboard.jpg);
+html, body
+{
+    height: 100%;
 }
+.col-lg-20{
+    position:relative;
+    z-index: 10;
+}
+.conversation-container{
+    position:absolute;
+    left: 0px;
+    top:0px;
+    width:100%;
+    z-index:0;
+    height:100%;
+    padding-top:150px;
+    box-sizing: border-box;
+    background-image: url(http://fc09.deviantart.net/fs71/f/2013/180/1/2/blackboard_texture_2_by_allthingsprecious-d6bab3c.jpg);
+}
+
+
+.draggable{
+    color: white;
+    background: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #888888;
+    border:1px solid  rgba(240, 240, 240, .1);
+    position:relative;
+}
+.draggable:hover{
+    border:1px solid  rgba(240, 240, 240, .8);
+}
+.draggable .delete{
+    position: absolute;
+    right: 5px;
+    top:5px;
+    opacity: 0.1;
+}
+.draggable:hover .delete{
+    opacity: 0.8;
+}
+
