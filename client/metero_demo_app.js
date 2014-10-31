@@ -1,5 +1,7 @@
 Chat = new Meteor.Collection('chats');
 UserLog = new Meteor.Collection('login');
+PositionLog = new Meteor.Collection('position');
+
 if (Meteor.isClient) {
   // counter starts at 0
 
@@ -23,7 +25,17 @@ if (Meteor.isClient) {
       }
     },
     message:function () {
-      return Chat.find({})
+     var chats = Chat.find({});
+      chats.forEach(function(data){
+       var elm_position_datum = PositionLog.findOne({'id_no':data._id});
+        if(elm_position_datum) {
+          console.log($('.draggable').text());
+            $('#' + data._id).css('top', elm_position_datum.top);
+            $('#' + data._id).css('left', elm_position_datum.left);
+      };
+
+    });
+      return chats
     }
   });
 
@@ -66,7 +78,9 @@ if (Meteor.isClient) {
       // increment the counter when button is clicked
        Chat.insert({
          user: Session.get('user'),
-         content: $('#message').val()
+         content: $('#message').val(),
+         top:null,
+         left:null
        });
       $('#message').val('');
     },
@@ -76,6 +90,15 @@ if (Meteor.isClient) {
     },
     'click .delete': function () {
       Chat.remove(this._id)
+    },
+    'mouseup .draggable.initialized': function () {
+      var pos=$('#'+this._id).position();
+      var datum = PositionLog.findOne({'id_no':this._id})
+      if(datum){
+        PositionLog.update(datum._id,{$set :{'top': pos.top, 'left': pos.left}});
+      }else {
+        PositionLog.insert({'id_no': this._id, 'top': pos.top, 'left': pos.left});
+      }
     }
    });
 }
