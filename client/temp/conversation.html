@@ -1,7 +1,7 @@
 <template name="conversation" class="conversation">
     <div class="conversation-container">
         <div class="col-md-6 left-part">
-            <h3> Information we have shared: </h3>
+            <h2> Information we have shared: </h2>
             <table class="table table-striped">
                 <thead>
                 <th>FROM</th>
@@ -19,14 +19,21 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-4 right-part">
+        <div class="col-md-6 right-part">
             <div class="panel panel-default">
-                User name :{{username}}<br/>
+                <div class="list-group">
+                    <h4><a href="" class="list-group-item active">
+                        User Name: {{username}}</a></h4>
 
-                MESSAGE :
-                <textarea id="message"></textarea><br/><br/>
-                <button class="add">Add</button>
-                <button class="logout">Log Out</button>
+                    <h4><a href="#" class="list-group-item active">
+                        Message
+                    </a></h4>
+                    <textarea id="message" placeholder="Type your message"></textarea>
+                </div>
+                <br/>
+
+                <button type="button" class="add btn btn-primary">Add</button>
+                <button type="button" class="logout btn btn-primary">Log Out</button>
             </div>
         </div>
     </div>
