@@ -1,7 +1,11 @@
 <template name="conversation" class="conversation">
     <div class="conversation-container">
         <div class="col-md-6 left-part">
-            <h2> Information we have shared: </h2>
+            <div class="list-group">
+                <h4><a href="" class="list-group-item active">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    Information We Have Shared: </a></h4>
+            </div>
             <table class="table table-striped">
                 <thead>
                 <th>FROM</th>
@@ -19,22 +23,20 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6 right-part">
-            <div class="panel panel-default">
-                <div class="list-group">
-                    <h4><a href="" class="list-group-item active">
-                        User Name: {{username}}</a></h4>
+        <div class="box col-md-6 right-part">
+            <div class="list-group">
+                <h4><a href="" class="list-group-item active">
+                    <span class="glyphicon glyphicon-user"></span>
+                    User Name: {{username}}</a></h4>
 
-                    <h4><a href="#" class="list-group-item active">
-                        Message
-                    </a></h4>
-                    <textarea id="message" placeholder="Type your message"></textarea>
-                </div>
-                <br/>
-
-                <button type="button" class="add btn btn-primary">Add</button>
-                <button type="button" class="logout btn btn-primary">Log Out</button>
+                <h4><a href="#" class="list-group-item active">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Message
+                </a></h4>
+                <textarea id="message" placeholder="Type your message"></textarea>
             </div>
+            <button type="button" class="add btn btn-primary">Add</button>
+            <button type="button" class="logout btn btn-primary">Log Out</button>
         </div>
     </div>
 </template>
