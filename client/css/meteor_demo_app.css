@@ -27,7 +27,7 @@ html, body {
     height: 100%;
     padding-top: 150px;
     box-sizing: border-box;
-    background-image: url(http://fc09.deviantart.net/fs71/f/2013/180/1/2/blackboard_texture_2_by_allthingsprecious-d6bab3c.jpg);
+    background-image: url(http://www.designbolts.com/wp-content/uploads/2012/12/Grey-Jean-White-Seamless-Patterns-For-Website-Backgrounds.jpg);
 }
 
 .draggable {
@@ -59,7 +59,7 @@ html, body {
 }
 
 .navbar-brand, .header{
-    color: white;
+    color: white !important;
     border-color: white;
 }
 

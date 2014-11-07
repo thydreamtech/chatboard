@@ -30,3 +30,7 @@
     display: inline-block;
     padding-right: 20px;
 }
+
+.ui-widget-content.draggable {
+    background-color: #428BCA;
+}
