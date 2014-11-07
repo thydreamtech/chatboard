@@ -1,6 +1,32 @@
 #message {
-    width: 400px;
+    width: 1200px;
     height: 60px;
     border: 1px solid #3366FF;
     border-left: 4px solid #3366FF;
+}
+
+.input-lg {
+    height: 46px;
+}
+
+.btn {
+    padding-top: 10px;
+    padding-right: 16px;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    height: 80px;
+    bottom: 0;
+    /*width: 100%;*/
+}
+
+.add {
+    height: 60px;
+}
+
+.ui-widget-content.draggable {
+    display: inline-block;
+    padding-right: 20px;
 }
