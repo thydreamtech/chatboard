@@ -18,42 +18,6 @@ html, body {
     z-index: 10;
 }
 
-.conversation-container {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    z-index: 0;
-    height: 100%;
-    padding-top: 150px;
-    box-sizing: border-box;
-    background-image: url(http://www.designbolts.com/wp-content/uploads/2012/12/Grey-Jean-White-Seamless-Patterns-For-Website-Backgrounds.jpg);
-}
-
-.draggable {
-    color: white;
-    background: none;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px #888888;
-    border: 1px solid rgba(240, 240, 240, .1);
-    position: relative;
-}
-
-.draggable:hover {
-    border: 1px solid rgba(240, 240, 240, .8);
-}
-
-.draggable .delete {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    opacity: 0.1;
-}
-
-.draggable:hover .delete {
-    opacity: 0.8;
-}
-
 .navbar.header {
     background-color: #428BCA;
 }

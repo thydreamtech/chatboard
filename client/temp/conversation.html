@@ -1,45 +1,46 @@
-<template name="conversation" class="conversation">
+<template name="conversation">
+  <div class="conversation-page">
     <nav class="navbar navbar-fixed-top header">
-        <div class="col-md-12">
-            <div class="navbar-header">
-                <a href="#" class="navbar-brand">Welcome to ThyDreamTech Intranet Messaging Service!</a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://localhost:3000/" class="header icon" target="_ext">{{username}}+</a></li>
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="glyphicon glyphicon-bell header"></i></a>
-                    </li>
-                    <li><a href="#" id="btnToggle"><i class="glyphicon glyphicon-th-large header"></i></a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-user header"></i></a></li>
-                </ul>
-            </div>
+      <div class="col-md-12">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">Chat Board!</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
         </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://localhost:3000/" class="header icon" target="_ext">{{username}}+</a></li>
+            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                class="glyphicon glyphicon-bell header"></i></a>
+            </li>
+            <li><a href="#" id="btnToggle"><i class="glyphicon glyphicon-th-large header"></i></a></li>
+            <li><a href="#"><i class="glyphicon glyphicon-user header"></i></a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <div class="conversation-container">
-        {{#each message}}
-        <div id="{{_id}}" class="ui-widget-content draggable">
-            <p>
-                {{user}}: {{content}}
-            </p>
-            <span class="delete">x</span>
-        </div>
-        {{/each}}
+      {{#each message}}
+      <div id="{{_id}}" class="ui-widget-content draggable">
+
+        {{user}}: {{content}}
+
+        <span class="delete">x</span>
+      </div>
+      {{/each}}
     </div>
     <div class="footer">
-        <div class="container">
-            <div class=".col-md-12">
-                <div class="input-group text-center">
-                    <input type="text" class="form-control input-lg" id="message" placeholder="Enter your Message">
-                    <span class="input-group-btn"><button class="add btn btn-lg btn-primary" type="button">Post
-                    </button></span>
-                </div>
-            </div>
+      <div class="input-group input-group-lg text-center new-message-form">
+        <input type="text" class="form-control" id="new-message" placeholder="Enter your Message">
+
+        <div class="input-group-btn">
+          <button class="btn btn-lg btn-primary add-button btn-success" type="button">Post
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 <!--<button type="button" class="logout btn btn-primary">Log Out</button>-->
 <!--Dont delete above comment-->

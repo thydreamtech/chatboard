@@ -1,36 +1,62 @@
-#message {
-    width: 1200px;
-    height: 60px;
+.conversation-page .conversation-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+    padding-top: 150px;
+    box-sizing: border-box;
+    background-image: url(http://www.designbolts.com/wp-content/uploads/2012/12/Grey-Jean-White-Seamless-Patterns-For-Website-Backgrounds.jpg);
+}
+
+.conversation-page .draggable {
+    color: white;
+    background: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #888888;
+    border: 1px solid rgba(240, 240, 240, .1);
+    position: relative;
+    display: inline-block;
+    padding: 5px 20px 5px 5px;
+    background-color: #428BCA;
+}
+
+.conversation-page .draggable:hover {
+    border: 1px solid rgba(240, 240, 240, .8);
+}
+
+.conversation-page .draggable .delete {
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    opacity: 0.1;
+}
+
+.conversation-page .draggable:hover .delete {
+    opacity: 0.8;
+}
+
+.conversation-page .new-message-form input#new-message {
+    /*width: 1200px;*/
     border: 1px solid #3366FF;
+    border-bottom-width: 2px;
     border-left: 4px solid #3366FF;
+    border-radius: 0px;
+    /*height: 46px;*/
 }
 
-.input-lg {
-    height: 46px;
-}
-
-.btn {
+.conversation-page .new-message-form .add-button {
     padding-top: 10px;
     padding-right: 16px;
     text-align: center;
+    border-radius: 0px !important;
+    /*height: 60px;*/
 }
 
-.footer {
+.conversation-page .footer {
     position: fixed;
-    height: 80px;
+    /*height: 80px;*/
     bottom: 0;
     /*width: 100%;*/
-}
-
-.add {
-    height: 60px;
-}
-
-.ui-widget-content.draggable {
-    display: inline-block;
-    padding-right: 20px;
-}
-
-.ui-widget-content.draggable {
-    background-color: #428BCA;
 }
