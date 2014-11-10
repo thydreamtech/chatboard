@@ -80,6 +80,17 @@ if (Meteor.isClient) {
         message.val('');
       }
     },
+    'click .edit-button': function () {
+      $("#"+ this._id+" .edit-panel").slideToggle("slow");
+    },
+    'click .save-button': function () {
+      var editMessage =$("#"+ this._id+" .edit-message");
+      if (editMessage.val() != '' && editMessage.val().trim() != '') {
+        Chat.update(this._id, {$set: {content: editMessage.val()}});
+        $("#" + this._id + " .edit-panel").slideToggle("slow");
+        editMessage.val('');
+      }
+    },
     'click .logout': function () {
       Router.go('login');
       Session.set('user', null);

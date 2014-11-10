@@ -60,3 +60,13 @@
     bottom: 0;
     /*width: 100%;*/
 }
+
+.edit-panel {
+    background-color: #3366FF;
+    display: none;
+}
+
+.edit-message {
+    color: black;
+    display: inline-block;
+}
