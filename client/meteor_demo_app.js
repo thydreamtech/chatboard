@@ -68,14 +68,17 @@ if (Meteor.isClient) {
   });
 
   Template.conversation.events({
-    'click .add': function () {
-      Chat.insert({
-        user: Session.get('user'),
-        content: $('#message').val(),
-        top: null,
-        left: null
-      });
-      $('#message').val('');
+    'click .post-button': function () {
+      var message = $('#new-message');
+      if (message.val() != '' && message.val().trim() != '') {
+        Chat.insert({
+          user: Session.get('user'),
+          content: message.val(),
+          top: null,
+          left: null
+        });
+        message.val('');
+      }
     },
     'click .logout': function () {
       Router.go('login');
@@ -89,7 +92,6 @@ if (Meteor.isClient) {
         top: $('#' + this._id).css('top'),
         left: $('#' + this._id).css('left')
       };
-      console.log(pos);
       var datum = PositionLog.findOne({'id_no': this._id})
       if (datum) {
         PositionLog.update(datum._id, {$set: {'top': pos.top, 'left': pos.left}});
