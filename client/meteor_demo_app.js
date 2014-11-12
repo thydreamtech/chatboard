@@ -56,7 +56,7 @@ if (Meteor.isClient) {
       var password = $('.password');
       var userdata = UserLog.findOne({user: user.val(), password: password.val()});
       if (!(userdata == null) && !(userdata._id == null)) {
-        Session.set('user', user.val());
+        Session.setPersistent('user', user.val());
         Router.go('conversation')
       } else {
         alert("Invalid username and password");
@@ -92,8 +92,8 @@ if (Meteor.isClient) {
       }
     },
     'click .logout': function () {
+      Session.clearPersistent()
       Router.go('login');
-      Session.set('user', null);
     },
     'click .delete': function () {
       Chat.remove(this._id)
