@@ -62,11 +62,17 @@
 }
 
 .edit-panel {
-    background-color: #3366FF;
+    /*background-color: #3366FF;*/
     display: none;
 }
 
 .edit-message {
     color: black;
     display: inline-block;
+}
+.save-button{
+    border: 1px solid green;
+    background-color: green;
+    border-left: 1px solid green;
+    border-bottom-width: 4px;
 }
