@@ -1,4 +1,4 @@
-SampleText = new Meteor.Collection('chats');
+Chat = new Meteor.Collection('chats');
 UserLog = new Meteor.Collection('login');
 PositionLog = new Meteor.Collection('position');
 if (Meteor.isServer) {

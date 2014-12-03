@@ -9,4 +9,5 @@ insecure
 bootstrap
 iron:router
 u2622:persistent-session
+accounts-password
 
